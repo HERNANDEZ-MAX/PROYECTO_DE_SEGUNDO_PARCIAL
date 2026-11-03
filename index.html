@@ -1,9 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Catálogo | Papelería H</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 24px;
+            font-family: Arial, sans-serif;
+            color: #222;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 32px auto;
+        }
+
+        .producto {
+            overflow: hidden;
+            padding: 16px;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 2px 8px #0000001a;
+        }
+
+        .producto img {
+            width: 100%;
+            height: 190px;
+            object-fit: contain;
+        }
+
+        .producto h2 {
+            font-size: 16px;
+            overflow-wrap: anywhere;
+        }
+    </style>
 </head>
 <body>
     <h1>Bienvenido a Papelería H</h1>
@@ -14,20 +62,175 @@
             <li><a href="contacto">Contacto</a></li>
         </ul>
     </nav>
-    <div>
-    <div>
-        <h2>Cuaderno profesional scribe clasico cuadro chico 200 hojas</h2>
-        <img src="Imagenes/Cuaderno profecional scribe clasico cuadro chico 200 hojas .jpg" alt="Cuaderno">
-        <p>Precio: $45</p>
-        <p>Disponibilidad: Disponible</p>
-    </div>
-
-
-
-
-
-
-
-    </div>
+    <main class="galeria">
+        <article class="producto">
+            <img src="Imagenes/12%20Boligrafo%20triangular%20azul%20mae%20punto%20mediano%20ultra%20suave.jpeg" alt="12 Boligrafo triangular azul mae punto mediano ultra suave">
+            <h2>12 Boligrafo triangular azul mae punto mediano ultra suave</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/12%20gomas%20de%20borrar%20de%20estilo%20lapiz%20para%20ni%C3%B1os.jpg" alt="12 gomas de borrar de estilo lapiz para niños">
+            <h2>12 gomas de borrar de estilo lapiz para niños</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/4PC%20cuaderno%20espiral%20.jpg" alt="4PC cuaderno espiral">
+            <h2>4PC cuaderno espiral</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/bola%20de%20unisel%20%2310.jpeg" alt="bola de unisel #10">
+            <h2>bola de unisel #10</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/BOLIGRAFO-MEDIANO-BLT-CON-10-COLS-CLASICOS.webp" alt="BOLIGRAFO-MEDIANO-BLT-CON-10-COLS-CLASICOS">
+            <h2>BOLIGRAFO-MEDIANO-BLT-CON-10-COLS-CLASICOS</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/Craneo%20de%20unisel%2015.5%20x%2020.1.jpg" alt="Craneo de unisel 15.5 x 20.1">
+            <h2>Craneo de unisel 15.5 x 20.1</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/cuaderno%20cosido%20profesional%20ferrini%20raya%20100%20hojas%20pack%204%20colores%20secudarios%20.webp" alt="cuaderno cosido profesional ferrini raya 100 hojas pack 4 colores secudarios">
+            <h2>cuaderno cosido profesional ferrini raya 100 hojas pack 4 colores secudarios</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/Cuaderno%20profecional%20scribe%20clasico%20cuadro%20chico%20200%20hojas%20.jpg" alt="Cuaderno profecional scribe clasico cuadro chico 200 hojas">
+            <h2>Cuaderno profecional scribe clasico cuadro chico 200 hojas</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/cubre%20hojas.jpeg" alt="cubre hojas">
+            <h2>cubre hojas</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/Folder%20de%20plastico%20con%20clip.jpeg" alt="Folder de plastico con clip">
+            <h2>Folder de plastico con clip</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/forder%20manila%20carta%20.jpeg" alt="forder manila carta">
+            <h2>forder manila carta</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/goma%20BR40-BR80.jpeg" alt="goma BR40-BR80">
+            <h2>goma BR40-BR80</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/goma%20de%20borrar%20factis.jpeg" alt="goma de borrar factis">
+            <h2>goma de borrar factis</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/goma%20en%20barra%2010g.jpeg" alt="goma en barra 10g">
+            <h2>goma en barra 10g</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/hamed-daram--5fbmfaInwg-unsplash.jpg" alt="hamed-daram--5fbmfaInwg-unsplash">
+            <h2>hamed-daram--5fbmfaInwg-unsplash</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/hojas%20de%20papel%20blancas%20.avif" alt="hojas de papel blancas">
+            <h2>hojas de papel blancas</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/lamina%20de%20unisel%20100x100%201cm.jpg" alt="lamina de unisel 100x100 1cm">
+            <h2>lamina de unisel 100x100 1cm</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/Lapiz%20bicolor%20.jpeg" alt="Lapiz bicolor">
+            <h2>Lapiz bicolor</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/Lapiz%20castell%209000%203B.jpeg" alt="Lapiz castell 9000 3B">
+            <h2>Lapiz castell 9000 3B</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/Lapiz%20grafico%20titan%20HB%20negro%20x12.jpeg" alt="Lapiz grafico titan HB negro x12">
+            <h2>Lapiz grafico titan HB negro x12</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/marcador%20permanete%20%20con%20punta%20fina%20.png" alt="marcador permanete con punta fina">
+            <h2>marcador permanete con punta fina</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/Memoria%20USB%20DE%208gb%20metalica%20.webp" alt="Memoria USB DE 8gb metalica">
+            <h2>Memoria USB DE 8gb metalica</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/memoria%20USB.jpeg" alt="memoria USB">
+            <h2>memoria USB</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/Monografia%20leyendas%20de%20terror%20en%20mixico.jpeg" alt="Monografia leyendas de terror en mixico">
+            <h2>Monografia leyendas de terror en mixico</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/monografia%20.webp" alt="monografia">
+            <h2>monografia</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/Pack%203%20marcadores(plumones)%20para%20firmas%20.jpg" alt="Pack 3 marcadores(plumones) para firmas">
+            <h2>Pack 3 marcadores(plumones) para firmas</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/palillos%20de%20madera%20de%20bote%20275%20Pzas..jpeg" alt="palillos de madera de bote 275 Pzas.">
+            <h2>palillos de madera de bote 275 Pzas.</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/palillos%20de%20madera.webp" alt="palillos de madera">
+            <h2>palillos de madera</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/pegamento%20lapiz%20adhesivo%20Dixon%2021%20grs.jpeg" alt="pegamento lapiz adhesivo Dixon 21 grs">
+            <h2>pegamento lapiz adhesivo Dixon 21 grs</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/pegamento%20liquido%20amarrillo%20110G%20pritt.jpg" alt="pegamento liquido amarrillo 110G pritt">
+            <h2>pegamento liquido amarrillo 110G pritt</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/peluche%20de%20oso%20.jpeg" alt="peluche de oso">
+            <h2>peluche de oso</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/peluche%20de%20oso.jpeg" alt="peluche de oso">
+            <h2>peluche de oso</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/peluche%20de%20stitch.jpg" alt="peluche de stitch">
+            <h2>peluche de stitch</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/pinceles%20economicos.jpeg" alt="pinceles economicos">
+            <h2>pinceles economicos</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/plumones%20doble%20punta%20pincel%20y%20fina%20.webp" alt="plumones doble punta pincel y fina">
+            <h2>plumones doble punta pincel y fina</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/politec%20set%20pinturas%20acrturas%20acrillicas%2012%20piezas%20100ml%20colores%20Basicos%20.jpg" alt="politec set pinturas acrturas acrillicas 12 piezas 100ml colores Basicos">
+            <h2>politec set pinturas acrturas acrillicas 12 piezas 100ml colores Basicos</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/Resistol%20850%20blaco%20500%20gr.jpg" alt="Resistol 850 blaco 500 gr">
+            <h2>Resistol 850 blaco 500 gr</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/scribe%20cuaderno%20Italiano%20pautado%20clasico%2050%20hojas%20.webp" alt="scribe cuaderno Italiano pautado clasico 50 hojas">
+            <h2>scribe cuaderno Italiano pautado clasico 50 hojas</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/tijera%20metal%20Zig%20Zag%20de%2013cm%20corte%20precisos%20y%20decorativos.jpeg" alt="tijera metal Zig Zag de 13cm corte precisos y decorativos">
+            <h2>tijera metal Zig Zag de 13cm corte precisos y decorativos</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/tijeras%20para%20ni%C3%B1os%20de%205a%C3%B1os.jpg" alt="tijeras para niños de 5años">
+            <h2>tijeras para niños de 5años</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/transon%20juego%20de%208%20pinceles%20redondos%20para%20acuarela.jpg" alt="transon juego de 8 pinceles redondos para acuarela">
+            <h2>transon juego de 8 pinceles redondos para acuarela</h2>
+        </article>
+        <article class="producto">
+            <img src="Imagenes/Uline%20Marcadores%20Permanentes%20-%20Negros.png" alt="Uline Marcadores Permanentes - Negros">
+            <h2>Uline Marcadores Permanentes - Negros</h2>
+        </article>
+    </main>
 </body>
 </html>
