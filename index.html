@@ -22,6 +22,14 @@
         <label for="buscar-productos">Buscar productos</label>
         <input type="search" id="buscar-productos" placeholder="Escribe el nombre de un producto..." autocomplete="off">
         <button type="button" id="boton-buscar">Buscar</button>
+        <button type="button" id="limpiar-busqueda">Limpiar</button>
+        <label for="ordenar-productos">Ordenar por</label>
+        <select id="ordenar-productos">
+            <option value="original">Orden original</option>
+            <option value="nombre">Nombre (A-Z)</option>
+            <option value="precio-asc">Precio (menor a mayor)</option>
+            <option value="precio-desc">Precio (mayor a menor)</option>
+        </select>
         <p id="resultado-busqueda" aria-live="polite"></p>
     </div>
     <main class="galeria">
