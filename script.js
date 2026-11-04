@@ -1,6 +1,8 @@
 const campoBusqueda = document.getElementById("buscar-productos");
 const botonBuscar = document.getElementById("boton-buscar");
 const botonLimpiar = document.getElementById("limpiar-busqueda");
+const selectorCategoria = document.getElementById("filtrar-categoria");
+const selectorDisponibilidad = document.getElementById("filtrar-disponibilidad");
 const selectorOrden = document.getElementById("ordenar-productos");
 const mensajeResultados = document.getElementById("resultado-busqueda");
 const galeria = document.querySelector(".galeria");
@@ -14,34 +16,78 @@ function normalizarTexto(texto) {
         .replace(/[\u0300-\u036f]/g, "");
 }
 
-function buscarProductos() {
-    const consulta = normalizarTexto(campoBusqueda.value.trim());
-    let cantidadEncontrada = 0;
-
-    productos.forEach((producto) => {
-        const nombre = normalizarTexto(producto.querySelector("h2").textContent);
-        const coincide = nombre.includes(consulta);
-
-        producto.hidden = !coincide;
-        if (coincide) {
-            cantidadEncontrada += 1;
-        }
-    });
-
-    if (consulta === "") {
-        mensajeResultados.textContent = `Se muestran todos los productos (${cantidadEncontrada}).`;
-    } else if (cantidadEncontrada === 0) {
-        mensajeResultados.textContent = "No se encontraron productos con ese nombre.";
-    } else {
-        mensajeResultados.textContent = `Se encontraron ${cantidadEncontrada} producto(s).`;
-    }
-}
-
 function obtenerPrecio(producto) {
     const textoInventario = producto.querySelector(".inventario").textContent;
     const precio = textoInventario.match(/Precio sugerido:\s*\$([\d,.]+)/);
 
     return precio ? Number(precio[1].replace(/,/g, "")) : Number.POSITIVE_INFINITY;
+}
+
+function obtenerCategoria(nombre) {
+    const reglas = [
+        ["juguetes", ["animalitos", "juguete", "carrito", "peluche", "pop ii"]],
+        ["manualidades", ["unisel", "palillos", "pegamento", "silicon", "pincel", "pintura", "brillantina", "diamantes", "aluminio"]],
+        ["escritura", ["boligrafo", "lapiz", "marcador", "plumon", "plumas", "colores", "gises", "goma"]],
+        ["papel", ["cuaderno", "papel", "hojas", "folder", "forder", "carton", "monografia", "biografias", "post it", "post-it", "cubre hojas"]],
+        ["oficina", ["calculadora", "cutter", "diurex", "grapadora", "regla", "memoria usb", "tijera"]]
+    ];
+
+    for (const [categoria, palabrasClave] of reglas) {
+        if (palabrasClave.some((palabra) => nombre.includes(palabra))) {
+            return categoria;
+        }
+    }
+
+    return "otros";
+}
+
+const datosProductos = productos.map((producto) => {
+    const textoInventario = normalizarTexto(producto.querySelector(".inventario").textContent);
+    const piezas = textoInventario.match(/piezas disponibles:\s*(\d+)/);
+
+    return {
+        elemento: producto,
+        nombre: normalizarTexto(producto.querySelector("h2").textContent),
+        categoria: obtenerCategoria(normalizarTexto(producto.querySelector("h2").textContent)),
+        disponible: !textoInventario.includes("agotado")
+            && !textoInventario.includes("no disponible")
+            && (!piezas || Number(piezas[1]) > 0)
+    };
+});
+
+function actualizarProductos() {
+    const consulta = normalizarTexto(campoBusqueda.value.trim());
+    const categoriaSeleccionada = selectorCategoria.value;
+    const disponibilidadSeleccionada = selectorDisponibilidad.value;
+
+    let cantidadEncontrada = 0;
+    datosProductos.forEach((producto) => {
+        const coincideBusqueda = producto.nombre.includes(consulta);
+        const coincideCategoria = categoriaSeleccionada === "todas"
+            || producto.categoria === categoriaSeleccionada;
+        const coincideDisponibilidad = disponibilidadSeleccionada === "todas"
+            || (disponibilidadSeleccionada === "disponible" && producto.disponible)
+            || (disponibilidadSeleccionada === "agotado" && !producto.disponible);
+        const coincide = coincideBusqueda && coincideCategoria
+            && coincideDisponibilidad;
+
+        producto.elemento.hidden = !coincide;
+        if (coincide) {
+            cantidadEncontrada += 1;
+        }
+    });
+
+    if (cantidadEncontrada === 0) {
+        mensajeResultados.textContent = "No se encontraron productos con esos filtros.";
+    } else if (
+        consulta === ""
+        && categoriaSeleccionada === "todas"
+        && disponibilidadSeleccionada === "todas"
+    ) {
+        mensajeResultados.textContent = `Se muestran todos los productos (${cantidadEncontrada}).`;
+    } else {
+        mensajeResultados.textContent = `Se encontraron ${cantidadEncontrada} producto(s).`;
+    }
 }
 
 function ordenarProductos() {
@@ -71,11 +117,19 @@ function ordenarProductos() {
     productosOrdenados.forEach((producto) => galeria.appendChild(producto));
 }
 
-botonBuscar.addEventListener("click", buscarProductos);
-campoBusqueda.addEventListener("input", buscarProductos);
+botonBuscar.addEventListener("click", actualizarProductos);
+campoBusqueda.addEventListener("input", actualizarProductos);
 botonLimpiar.addEventListener("click", () => {
     campoBusqueda.value = "";
-    buscarProductos();
+    selectorCategoria.value = "todas";
+    selectorDisponibilidad.value = "todas";
+    selectorOrden.value = "original";
+    ordenarProductos();
+    actualizarProductos();
     campoBusqueda.focus();
 });
 selectorOrden.addEventListener("change", ordenarProductos);
+selectorCategoria.addEventListener("change", actualizarProductos);
+selectorDisponibilidad.addEventListener("change", actualizarProductos);
+
+actualizarProductos();

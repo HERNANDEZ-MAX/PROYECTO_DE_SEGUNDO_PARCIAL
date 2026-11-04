@@ -23,6 +23,22 @@
         <input type="search" id="buscar-productos" placeholder="Escribe el nombre de un producto..." autocomplete="off">
         <button type="button" id="boton-buscar">Buscar</button>
         <button type="button" id="limpiar-busqueda">Limpiar</button>
+        <label for="filtrar-categoria">Categoría</label>
+        <select id="filtrar-categoria">
+            <option value="todas">Todas las categorías</option>
+            <option value="papel">Cuadernos y papel</option>
+            <option value="escritura">Escritura y útiles</option>
+            <option value="oficina">Oficina</option>
+            <option value="manualidades">Manualidades</option>
+            <option value="juguetes">Juguetes y peluches</option>
+            <option value="otros">Otros</option>
+        </select>
+        <label for="filtrar-disponibilidad">Disponibilidad</label>
+        <select id="filtrar-disponibilidad">
+            <option value="todas">Todos</option>
+            <option value="disponible">Disponible</option>
+            <option value="agotado">Agotado</option>
+        </select>
         <label for="ordenar-productos">Ordenar por</label>
         <select id="ordenar-productos">
             <option value="original">Orden original</option>
@@ -618,7 +634,7 @@
                 <p>Disponibilidad: Disponible</p>
             </div>
         </div>
-    </main>        <div class="producto">
+        <div class="producto">
             <img src="Imagenes/regla%20T%20maped%2060%20Cms.jpeg" alt="regla T maped 60 Cms">
             <h2>regla T maped 60 Cms</h2>
             <div class="inventario">
