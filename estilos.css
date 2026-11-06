@@ -1,0 +1,507 @@
+:root {
+    color-scheme: light;
+    --azul-profundo: #15376b;
+    --azul: #2456c4;
+    --tinta: #172b4d;
+    --suave: #65758d;
+    --fondo: #f5f7fb;
+    --borde: #e2e8f0;
+    --verde: #168344;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    min-width: 320px;
+    margin: 0;
+    background:
+        radial-gradient(ellipse at 4% 12%, rgb(219 234 254 / 55%), transparent 28rem),
+        var(--fondo);
+    color: var(--tinta);
+    font-family: "Segoe UI", "Trebuchet MS", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.barra-superior {
+    position: sticky;
+    z-index: 5;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 74px;
+    padding: 0.75rem max(1.25rem, calc((100% - 1120px) / 2));
+    border-bottom: 1px solid rgb(255 255 255 / 13%);
+    background: rgb(21 55 107 / 96%);
+    box-shadow: 0 8px 24px rgb(15 23 42 / 12%);
+    backdrop-filter: blur(14px);
+}
+
+.marca-terminos {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.marca-terminos strong {
+    color: #ffd16b;
+}
+
+.marca-simbolo {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border: 2px solid rgb(255 255 255 / 75%);
+    border-radius: 13px 13px 13px 5px;
+    background: #ffd16b;
+    color: var(--azul-profundo);
+    font-size: 1.2rem;
+    font-weight: 900;
+    transform: rotate(-5deg);
+}
+
+.regresar-inicio {
+    padding: 0.65rem 0.9rem;
+    border: 1px solid rgb(255 255 255 / 24%);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.regresar-inicio:hover {
+    transform: translateX(-2px);
+    background: rgb(255 255 255 / 12%);
+}
+
+.regresar-inicio span {
+    margin-right: 0.35rem;
+    color: #ffd16b;
+}
+
+.portada-terminos {
+    position: relative;
+    max-width: 1120px;
+    min-height: 310px;
+    margin: 2rem auto 1.5rem;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    overflow: hidden;
+    border: 1px solid #dce7f8;
+    border-radius: 28px;
+    background:
+        radial-gradient(circle at 87% 35%, rgb(255 209 107 / 26%), transparent 15rem),
+        linear-gradient(115deg, #fff, #edf4ff);
+    box-shadow: 0 20px 50px rgb(30 64 120 / 9%);
+    animation: entrada-suave 550ms ease-out both;
+}
+
+.etiqueta-portada {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    color: #a45b08;
+    font-size: 0.72rem;
+    font-weight: 850;
+    letter-spacing: 0.15em;
+}
+
+.portada-terminos h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #17345f;
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    font-weight: 850;
+    letter-spacing: -0.065em;
+    line-height: 0.99;
+}
+
+.portada-terminos h1 span {
+    color: #e6a325;
+}
+
+.portada-terminos > p {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 1rem 0 0;
+    color: var(--suave);
+    font-size: 1.03rem;
+    line-height: 1.7;
+}
+
+.nota-portada {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    max-width: 600px;
+    margin-top: 1.25rem;
+    color: #49617e;
+    font-size: 0.86rem;
+}
+
+.nota-portada span:first-child {
+    color: #d78c14;
+    font-size: 1.15rem;
+}
+
+.decoracion-portada {
+    position: absolute;
+    top: 50%;
+    right: 9%;
+    color: rgb(36 86 196 / 8%);
+    font-family: Georgia, serif;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1;
+    transform: translateY(-53%) rotate(9deg);
+    user-select: none;
+}
+
+.contenido-terminos {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+    max-width: 1120px;
+    margin: 0 auto 4rem;
+}
+
+.indice-terminos {
+    position: sticky;
+    top: 94px;
+    display: grid;
+    gap: 0.2rem;
+    padding: 1.1rem;
+    border: 1px solid var(--borde);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 10px 28px rgb(15 23 42 / 5%);
+}
+
+.titulo-indice {
+    padding: 0.25rem 0.65rem 0.55rem;
+    color: #213d65;
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.indice-terminos a {
+    padding: 0.55rem 0.65rem;
+    border-radius: 8px;
+    color: #64748b;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    text-decoration: none;
+    transition: background-color 150ms ease, color 150ms ease, padding 150ms ease;
+}
+
+.indice-terminos a:hover {
+    padding-left: 0.85rem;
+    background: #eff5ff;
+    color: #2456c4;
+}
+
+.lista-terminos {
+    min-width: 0;
+}
+
+.introduccion-terminos {
+    margin: 0 0 1rem;
+    padding: 1.15rem 1.35rem;
+    border: 1px solid #dce7f8;
+    border-radius: 15px;
+    background: #edf4ff;
+    color: #435873;
+    font-size: 0.94rem;
+    line-height: 1.7;
+}
+
+.termino {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 0.9rem;
+    margin-bottom: 0.8rem;
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 5px 16px rgb(15 23 42 / 3%);
+    scroll-margin-top: 95px;
+    transition: transform 170ms ease, border-color 170ms ease, box-shadow 170ms ease;
+    animation: entrada-suave 450ms ease-out both;
+}
+
+.termino:hover {
+    transform: translateY(-2px);
+    border-color: #cbdcf5;
+    box-shadow: 0 12px 26px rgb(30 64 120 / 8%);
+}
+
+.numero-termino {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid #dce8fb;
+    border-radius: 13px;
+    background: #eff5ff;
+    color: #2456c4;
+    font-size: 0.84rem;
+    font-weight: 850;
+}
+
+.termino h2 {
+    margin: 0.1rem 0 0.5rem;
+    color: #1b355b;
+    font-size: 1.05rem;
+    letter-spacing: -0.015em;
+}
+
+.termino p {
+    margin: 0.4rem 0 0;
+    color: #637188;
+    font-size: 0.91rem;
+    line-height: 1.72;
+}
+
+.termino-contacto {
+    border-color: #bce7cb;
+    background: linear-gradient(115deg, #f0fbf4, #fff);
+}
+
+.termino-contacto .numero-termino {
+    border-color: #c8edd4;
+    background: #e3f7e9;
+    color: #168344;
+}
+
+.boton-contacto {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 11px;
+    background: var(--verde);
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 750;
+    text-decoration: none;
+    box-shadow: 0 7px 16px rgb(22 131 68 / 18%);
+    transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.boton-contacto:hover {
+    transform: translateY(-2px);
+    background: #116b38;
+    box-shadow: 0 10px 20px rgb(22 131 68 / 25%);
+}
+
+.actualizacion {
+    margin: 1.1rem 0 0;
+    color: #7b8798;
+    font-size: 0.78rem;
+    text-align: center;
+}
+
+.pie-terminos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.5rem 1rem;
+    border-top: 1px solid rgb(255 255 255 / 14%);
+    background: linear-gradient(120deg, #102a56, #1e3a8a);
+    color: #dbeafe;
+}
+
+.pie-terminos .marca-simbolo {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+}
+
+.pie-terminos p {
+    margin: 0;
+    font-size: 0.88rem;
+}
+
+.pie-terminos strong {
+    color: #fff;
+}
+
+.pie-terminos > a {
+    margin-left: 0.75rem;
+    color: #fff;
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration-color: rgb(255 255 255 / 45%);
+    text-underline-offset: 3px;
+}
+
+.pie-terminos > a span {
+    color: #ffd16b;
+}
+
+a:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 3px;
+}
+
+@keyframes entrada-suave {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (max-width: 760px) {
+    .portada-terminos,
+    .contenido-terminos {
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
+    .contenido-terminos {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .indice-terminos {
+        position: static;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .titulo-indice {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .barra-superior {
+        min-height: 64px;
+        padding: 0.6rem 0.85rem;
+    }
+
+    .marca-terminos {
+        gap: 0.45rem;
+        font-size: 0.92rem;
+    }
+
+    .marca-simbolo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .regresar-inicio {
+        padding: 0.55rem 0.65rem;
+        font-size: 0.78rem;
+    }
+
+    .portada-terminos {
+        min-height: 0;
+        margin-top: 1rem;
+        padding: 1.6rem 1.25rem;
+        border-radius: 21px;
+    }
+
+    .portada-terminos h1 {
+        font-size: clamp(2.55rem, 12vw, 3.5rem);
+    }
+
+    .portada-terminos > p {
+        font-size: 0.94rem;
+    }
+
+    .decoracion-portada {
+        top: 18%;
+        right: 5%;
+        font-size: 11rem;
+    }
+
+    .contenido-terminos {
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .indice-terminos {
+        padding: 0.8rem;
+    }
+
+    .indice-terminos a {
+        font-size: 0.76rem;
+    }
+
+    .termino {
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 0.7rem;
+        padding: 1rem;
+    }
+
+    .numero-termino {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        font-size: 0.74rem;
+    }
+
+    .termino h2 {
+        font-size: 0.98rem;
+    }
+
+    .termino p {
+        font-size: 0.87rem;
+    }
+
+    .pie-terminos {
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        padding: 1.25rem 0.8rem;
+    }
+
+    .pie-terminos p {
+        font-size: 0.8rem;
+    }
+
+    .pie-terminos > a {
+        flex-basis: 100%;
+        margin: 0.25rem 0 0;
+        text-align: center;
+    }
+}
