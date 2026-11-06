@@ -1,44 +1,450 @@
 .ubicacion {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 1.5rem;
+    position: relative;
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    overflow: hidden;
+    border: 1px solid #dbeafe;
+    border-radius: 30px;
+    background:
+        radial-gradient(ellipse at 100% 0, rgb(191 219 254 / 55%), transparent 38%),
+        linear-gradient(145deg, #f8fbff, #eef6ff);
+    box-shadow: 0 24px 60px rgb(30 64 175 / 12%);
+    animation: aparecer-ubicacion 700ms ease-out both;
+}
+
+.encabezado-ubicacion {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.etiqueta-ubicacion {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.encabezado-ubicacion h2 {
+    margin: 0;
+    color: #102a56;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    letter-spacing: -0.04em;
+}
+
+.encabezado-ubicacion p {
+    margin: 0.7rem 0 0;
+    color: #64748b;
+    font-size: 1.05rem;
+}
+
+.contenido-ubicacion {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(270px, 0.8fr);
+    gap: 1.25rem;
+    align-items: stretch;
+}
+
+.tarjeta-mapa,
+.tarjeta-direccion,
+.tarjeta-whatsapp {
+    border: 1px solid rgb(219 234 254 / 85%);
+    border-radius: 22px;
+    background: rgb(255 255 255 / 90%);
+    box-shadow: 0 12px 30px rgb(30 64 175 / 8%);
+}
+
+.tarjeta-mapa {
+    padding: 0.9rem;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.tarjeta-mapa:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 38px rgb(30 64 175 / 14%);
+}
+
+.barra-mapa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.25rem 0.3rem 0.85rem;
+    color: #1e3a8a;
+    font-size: 0.88rem;
+    font-weight: 750;
+}
+
+.barra-mapa > span:first-child {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.punto-ubicacion {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 4px #dcfce7;
+    animation: latido-ubicacion 1.8s ease-in-out infinite;
+}
+
+.codigo-postal {
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    background: #eff6ff;
+    color: #475569;
+    font-size: 0.75rem;
 }
 
 .mapa {
-    width: 100%;
-    height: 300px;
+    height: 390px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #dbeafe;
 }
 
 .mapa iframe {
+    display: block;
     width: 100%;
     height: 100%;
     border: 0;
 }
 
-.contacto-whatsapp a {
-    display: inline-flex;
+.enlace-mapa {
+    display: flex;
     align-items: center;
-    gap: 0.6rem;
-    color: #128c4a;
-    font-weight: bold;
+    justify-content: space-between;
+    margin-top: 0.85rem;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 750;
     text-decoration: none;
+    transition: background-color 180ms ease, color 180ms ease;
 }
 
-.contacto-whatsapp a:hover {
-    text-decoration: underline;
+.enlace-mapa span {
+    font-size: 1.25rem;
+    transition: transform 180ms ease;
+}
+
+.enlace-mapa:hover {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.enlace-mapa:hover span {
+    transform: translate(2px, -2px);
+}
+
+.tarjetas-contacto {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.tarjeta-direccion,
+.tarjeta-whatsapp {
+    padding: 1.5rem;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.tarjeta-direccion:hover,
+.tarjeta-whatsapp:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 38px rgb(30 64 175 / 13%);
+}
+
+.icono-direccion {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    place-items: center;
+    border-radius: 15px;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.icono-direccion svg {
+    width: 27px;
+    height: 27px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+}
+
+.titulo-tarjeta {
+    color: #102a56;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.tarjeta-direccion p,
+.tarjeta-whatsapp p {
+    margin: 0.65rem 0;
+    color: #64748b;
+    font-size: 0.92rem;
+    line-height: 1.65;
+}
+
+.dato-secundario {
+    display: inline-block;
+    margin-top: 0.35rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.tarjeta-whatsapp {
+    position: relative;
+    overflow: hidden;
+    border-color: #a7f3d0;
+    background: linear-gradient(145deg, #ecfdf5 0%, #fff 72%);
+}
+
+.tarjeta-whatsapp::after {
+    position: absolute;
+    top: -45px;
+    right: -38px;
+    width: 140px;
+    height: 140px;
+    border: 20px solid rgb(34 197 94 / 7%);
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+}
+
+.etiqueta-whatsapp {
+    color: #15803d;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.tarjeta-whatsapp h3 {
+    margin: 0.45rem 0 0;
+    color: #166534;
+    font-size: 1.55rem;
+    letter-spacing: -0.03em;
+}
+
+.boton-whatsapp {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.1rem;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid #16a34a;
+    border-radius: 16px;
+    background: linear-gradient(110deg, #16a34a, #15803d);
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgb(21 128 61 / 20%);
+    transition: box-shadow 180ms ease, transform 180ms ease, filter 180ms ease;
+}
+
+.boton-whatsapp:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    box-shadow: 0 12px 24px rgb(21 128 61 / 30%);
 }
 
 .icono-whatsapp {
-    width: 40px;
-    height: 40px;
+    width: 31px;
+    height: 31px;
+    flex: 0 0 auto;
 }
 
-@media (max-width: 600px) {
+.flecha-whatsapp {
+    margin-left: auto;
+    font-size: 1.15rem;
+    transition: transform 180ms ease;
+}
+
+.boton-whatsapp:hover .flecha-whatsapp {
+    transform: translate(2px, -2px);
+}
+
+.ubicacion a:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 4px;
+}
+
+@keyframes aparecer-ubicacion {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes latido-ubicacion {
+    50% {
+        box-shadow: 0 0 0 7px rgb(220 252 231 / 55%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ubicacion,
+    .ubicacion *,
+    .ubicacion *::before,
+    .ubicacion *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (max-width: 760px) {
     .ubicacion {
-        padding: 1rem;
+        margin: 2.5rem 1rem;
+        border-radius: 24px;
+    }
+
+    .contenido-ubicacion {
+        grid-template-columns: 1fr;
     }
 
     .mapa {
-        height: 240px;
+        height: 320px;
+    }
+
+    .tarjetas-contacto {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+    }
+}
+
+@media (max-width: 520px) {
+    .ubicacion {
+        margin: 1.5rem 0.75rem;
+        padding: 1.35rem 1rem;
+        border-radius: 20px;
+    }
+
+    .encabezado-ubicacion {
+        margin-bottom: 1.35rem;
+    }
+
+    .encabezado-ubicacion p {
+        font-size: 0.95rem;
+    }
+
+    .tarjeta-mapa {
+        padding: 0.65rem;
+        border-radius: 17px;
+    }
+
+    .mapa {
+        height: 270px;
+    }
+
+    .tarjetas-contacto {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+    }
+
+    .tarjeta-direccion,
+    .tarjeta-whatsapp {
+        padding: 1.2rem;
+    }
+}
+
+.aviso-catalogo {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    max-width: 1050px;
+    margin: 1.5rem auto 2rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid #fde68a;
+    border-radius: 16px;
+    background: linear-gradient(110deg, #fffbeb, #fff7ed);
+    box-shadow: 0 8px 22px rgb(180 83 9 / 7%);
+    color: #78350f;
+}
+
+.icono-aviso {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 11px;
+    background: #fef3c7;
+    color: #d97706;
+    font-size: 1.15rem;
+}
+
+.aviso-catalogo p {
+    margin: 0;
+    font-size: 0.93rem;
+    line-height: 1.6;
+}
+
+.aviso-catalogo strong {
+    color: #92400e;
+}
+
+.pie-pagina {
+    margin-top: 3rem;
+    padding: 2rem 1.5rem;
+    border-top: 1px solid #dbeafe;
+    background: linear-gradient(135deg, #102a56, #1e3a8a);
+    color: #dbeafe;
+    text-align: center;
+}
+
+.pie-pagina p {
+    margin: 0.35rem auto;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+.pie-pagina p:first-child {
+    color: #fff;
+    font-size: 1.05rem;
+}
+
+.pie-pagina p:last-child {
+    color: #bfdbfe;
+    font-size: 0.88rem;
+}
+
+@media (max-width: 600px) {
+    .aviso-catalogo {
+        margin: 1rem;
+        padding: 0.9rem;
+    }
+
+    .aviso-catalogo p {
+        font-size: 0.88rem;
+    }
+
+    .pie-pagina {
+        padding: 1.5rem 1rem;
     }
 }

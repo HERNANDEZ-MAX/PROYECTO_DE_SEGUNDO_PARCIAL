@@ -48,6 +48,10 @@
         </select>
         <p id="resultado-busqueda" aria-live="polite"></p>
     </div>
+    <aside class="aviso-catalogo" aria-label="Aviso sobre el catálogo">
+        <span class="icono-aviso" aria-hidden="true">✦</span>
+        <p><strong>Catálogo en actualización.</strong> Esta página muestra solo algunos de nuestros productos; el catálogo aún no está completo y algunas funciones siguen en desarrollo. Contáctanos para confirmar disponibilidad.</p>
+    </aside>
     <main class="galeria">
         <div class="producto">
             <img src="Imagenes/4PC%20cuaderno%20espiral%20.jpg" alt="4PC cuaderno espiral">
@@ -735,31 +739,61 @@
         </div>
     </main>
     <section class="ubicacion" id="contacto" aria-labelledby="titulo-ubicacion">
-        <h2 id="titulo-ubicacion">Visítanos</h2>
-        <p>
-            Encuentra Papelería HG en Barranca del Muerto, Manzana 022, en la localidad
-            de Carlos Hank González, Estado de México, código postal 56510. Consulta el
-            mapa para ubicar el local y planear tu visita.
-        </p>
-        <div class="mapa">
-            <iframe
-                src="https://www.google.com/maps?output=embed&amp;q=PAPELERIA%20HG%2C%20Barranca%20del%20Muerto%20Manzana%20022%2C%20Carlos%20Hank%20Gonzalez%2C%2056510%20Prof.%20Carlos%20Hank%20Gonz%C3%A1lez%2C%20M%C3%A9x."
-                title="Mapa de ubicación de Papelería HG"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+        <header class="encabezado-ubicacion">
+            <span class="etiqueta-ubicacion">PAPELERÍA HG · CÓMO LLEGAR</span>
+            <h2 id="titulo-ubicacion">¡Nos encantará recibirte!</h2>
+            <p>Estamos cerca. Consulta el mapa y ven a visitarnos.</p>
+        </header>
+        <div class="contenido-ubicacion">
+            <div class="tarjeta-mapa">
+                <div class="barra-mapa">
+                    <span><span class="punto-ubicacion"></span> Nuestra ubicación</span>
+                    <span class="codigo-postal">C.P. 56510</span>
+                </div>
+                <div class="mapa">
+                    <iframe
+                        src="https://www.google.com/maps?output=embed&amp;q=PAPELERIA%20HG%2C%20Barranca%20del%20Muerto%20Manzana%20022%2C%20Carlos%20Hank%20Gonzalez%2C%2056510%20Prof.%20Carlos%20Hank%20Gonz%C3%A1lez%2C%20M%C3%A9x."
+                        title="Mapa de ubicación de Papelería HG"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <a class="enlace-mapa" href="https://maps.app.goo.gl/B93kvdqYYRoPSN6P7" target="_blank" rel="noopener noreferrer">
+                    Ver cómo llegar <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+            <div class="tarjetas-contacto">
+                <article class="tarjeta-direccion">
+                    <div class="icono-direccion" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false">
+                            <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                            <circle cx="12" cy="10" r="2.5"/>
+                        </svg>
+                    </div>
+                    <span class="titulo-tarjeta">Encuéntranos</span>
+                    <p>Barranca del Muerto, Manzana 022, Carlos Hank González, Estado de México.</p>
+                    <span class="dato-secundario">Código postal 56510</span>
+                </article>
+                <article class="tarjeta-whatsapp">
+                    <span class="etiqueta-whatsapp">¿Tienes alguna pregunta?</span>
+                    <h3>Escríbenos</h3>
+                    <p>Con gusto te ayudamos por WhatsApp.</p>
+                    <a class="boton-whatsapp" href="https://wa.me/5215611342106" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp al +52 1 56 1134 2106">
+                        <svg class="icono-whatsapp" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                            <circle cx="24" cy="24" r="24" fill="#fff"/>
+                            <path fill="#16a34a" d="M34.7 13.3A15 15 0 0 0 10.9 31l-2 7.3 7.5-2A15 15 0 0 0 34.7 13.3ZM24 36a12 12 0 0 1-6.1-1.7l-.4-.2-4.4 1.2 1.2-4.3-.3-.5A12 12 0 1 1 24 36Zm6.6-9c-.4-.2-2.2-1.1-2.6-1.2s-.6-.2-.9.2-1 1.2-1.3 1.5-.5.3-.9.1a10.5 10.5 0 0 1-3.1-1.9 11.6 11.6 0 0 1-2.1-2.6c-.2-.4 0-.6.2-.8l.6-.7.4-.7c.1-.2 0-.5 0-.7s-.9-2.1-1.2-2.9c-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .5s-1.4 1.4-1.4 3.3 1.4 3.8 1.6 4.1a15.4 15.4 0 0 0 5.9 5.2c.8.4 1.4.6 1.9.8.8.2 1.5.2 2.1.1.7-.1 2.2-.9 2.5-1.8s.3-1.7.2-1.8-.3-.2-.7-.4Z"/>
+                        </svg>
+                        <span>+52 1 56 1134 2106</span>
+                        <span class="flecha-whatsapp" aria-hidden="true">↗</span>
+                    </a>
+                </article>
+            </div>
         </div>
-        <p><a href="https://maps.app.goo.gl/B93kvdqYYRoPSN6P7" target="_blank" rel="noopener noreferrer">Abrir ubicación en Google Maps</a></p>
-        <p class="contacto-whatsapp">
-            <a href="https://wa.me/5215611342106" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp al +52 1 56 1134 2106">
-                <svg class="icono-whatsapp" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-                    <circle cx="24" cy="24" r="24" fill="#25D366"/>
-                    <path fill="#fff" d="M34.7 13.3A15 15 0 0 0 10.9 31l-2 7.3 7.5-2A15 15 0 0 0 34.7 13.3ZM24 36a12 12 0 0 1-6.1-1.7l-.4-.2-4.4 1.2 1.2-4.3-.3-.5A12 12 0 1 1 24 36Zm6.6-9c-.4-.2-2.2-1.1-2.6-1.2s-.6-.2-.9.2-1 1.2-1.3 1.5-.5.3-.9.1a10.5 10.5 0 0 1-3.1-1.9 11.6 11.6 0 0 1-2.1-2.6c-.2-.4 0-.6.2-.8l.6-.7.4-.7c.1-.2 0-.5 0-.7s-.9-2.1-1.2-2.9c-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .5s-1.4 1.4-1.4 3.3 1.4 3.8 1.6 4.1a15.4 15.4 0 0 0 5.9 5.2c.8.4 1.4.6 1.9.8.8.2 1.5.2 2.1.1.7-.1 2.2-.9 2.5-1.8s.3-1.7.2-1.8-.3-.2-.7-.4Z"/>
-                </svg>
-                <span>+52 1 56 1134 2106</span>
-            </a>
-        </p>
     </section>
+    <footer class="pie-pagina">
+        <p><strong>Papelería H</strong> · Gracias por visitarnos.</p>
+        <p>Este sitio continúa en construcción. Estamos trabajando para agregar más productos y nuevas funciones.</p>
+    </footer>
     <script src="script.js"></script>
  </body>
 </html>
