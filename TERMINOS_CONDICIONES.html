@@ -1,125 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Términos y Condiciones</title>
+    <meta name="theme-color" content="#15376b">
+    <meta name="description" content="Consulta las condiciones para usar y consultar el catálogo de Papelería H.">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Términos y condiciones | Papelería H</title>
 </head>
-
 <body>
-
-    <header>
-        <h1>Términos y Condiciones</h1>
-        <p>Bienvenido a nuestra papelería en línea.</p>
+    <header class="barra-superior">
+        <a class="marca-terminos" href="index.html" aria-label="Papelería H, regresar al inicio">
+            <span class="marca-simbolo" aria-hidden="true">H</span>
+            <span>Papelería <strong>H</strong></span>
+        </a>
+        <a class="regresar-inicio" href="index.html"><span aria-hidden="true">←</span> Volver a la tienda</a>
     </header>
 
     <main>
-
-        <section>
-            <h2>1. Aceptación de los términos</h2>
-            <p>
-                Al ingresar y consultar nuestro sitio web, el usuario
-                acepta los presentes términos y condiciones.
-            </p>
+        <section class="portada-terminos" aria-labelledby="titulo-terminos">
+            <span class="etiqueta-portada">INFORMACIÓN IMPORTANTE</span>
+            <h1 id="titulo-terminos">Términos <span>&amp;</span><br>condiciones</h1>
+            <p>Un espacio claro para conocer cómo funciona nuestro sitio y qué puedes esperar de nuestro catálogo.</p>
+            <div class="nota-portada">
+                <span aria-hidden="true">✦</span>
+                <span>Gracias por visitar Papelería H. Si tienes dudas, estamos para ayudarte.</span>
+            </div>
+            <span class="decoracion-portada" aria-hidden="true">§</span>
         </section>
 
-        <section>
-            <h2>2. Información de los productos</h2>
-            <p>
-                En nuestro catálogo se muestran los productos que
-                ofrece la papelería, incluyendo sus nombres,
-                descripciones, precios y disponibilidad.
-            </p>
-        </section>
+        <div class="contenido-terminos">
+            <nav class="indice-terminos" aria-label="Índice de términos">
+                <span class="titulo-indice">En esta página</span>
+                <a href="#aceptacion">Aceptación</a>
+                <a href="#productos">Información de productos</a>
+                <a href="#disponibilidad">Disponibilidad</a>
+                <a href="#uso">Uso del sitio</a>
+                <a href="#catalogo">Administración del catálogo</a>
+                <a href="#precios">Precios</a>
+                <a href="#fotografias">Fotografías</a>
+                <a href="#responsabilidad">Responsabilidad</a>
+                <a href="#modificaciones">Modificaciones</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
 
-        <section>
-            <h2>3. Disponibilidad de los productos</h2>
-            <p>
-                La disponibilidad de los productos puede cambiar
-                constantemente. Los artículos marcados como disponibles
-                pueden agotarse sin previo aviso.
-            </p>
-            <p>
-                Se recomienda consultar directamente con el personal
-                de la papelería antes de acudir.
-            </p>
-        </section>
+            <article class="lista-terminos">
+                <p class="introduccion-terminos">Al navegar por esta página puedes consultar información general de Papelería H. Te recomendamos leer estos puntos; son sencillos y nos ayudan a mantener expectativas claras.</p>
 
-        <section>
-            <h2>4. Uso del sitio web</h2>
-            <p>
-                Los usuarios pueden consultar libremente el catálogo
-                de productos y la información de contacto.
-            </p>
-            <p>
-                Los visitantes no tienen autorización para modificar,
-                agregar o eliminar productos del catálogo.
-            </p>
-        </section>
+                <section class="termino" id="aceptacion">
+                    <span class="numero-termino">01</span>
+                    <div>
+                        <h2>Aceptación de los términos</h2>
+                        <p>Al ingresar y consultar este sitio web, el usuario acepta los presentes términos y condiciones. Si no estás de acuerdo, puedes dejar de utilizar el sitio.</p>
+                    </div>
+                </section>
 
-        <section>
-            <h2>5. Administración del catálogo</h2>
-            <p>
-                El propietario o administrador de la papelería será
-                responsable de actualizar los productos, precios
-                y disponibilidad que aparecen en el sitio web.
-            </p>
-        </section>
+                <section class="termino" id="productos">
+                    <span class="numero-termino">02</span>
+                    <div>
+                        <h2>Información de los productos</h2>
+                        <p>El catálogo muestra algunos de los productos que ofrece la papelería, junto con nombres, imágenes, precios sugeridos y datos de disponibilidad. La información es orientativa y el catálogo todavía puede estar incompleto.</p>
+                    </div>
+                </section>
 
-        <section>
-            <h2>6. Precios</h2>
-            <p>
-                Los precios publicados en el catálogo son informativos
-                y pueden cambiar. Para confirmar el precio de un
-                producto, el cliente deberá comunicarse directamente
-                con la papelería.
-            </p>
-        </section>
+                <section class="termino" id="disponibilidad">
+                    <span class="numero-termino">03</span>
+                    <div>
+                        <h2>Disponibilidad de los productos</h2>
+                        <p>La existencia puede cambiar sin previo aviso. Un artículo marcado como disponible podría agotarse antes de tu visita.</p>
+                        <p>Para confirmar que un producto está disponible, comunícate con la papelería antes de acudir.</p>
+                    </div>
+                </section>
 
-        <section>
-            <h2>7. Fotografías de los productos</h2>
-            <p>
-                Las fotografías publicadas tienen como finalidad
-                mostrar los artículos que ofrece la papelería.
-                Algunas imágenes pueden ser ilustrativas.
-            </p>
-        </section>
+                <section class="termino" id="uso">
+                    <span class="numero-termino">04</span>
+                    <div>
+                        <h2>Uso del sitio web</h2>
+                        <p>Los usuarios pueden consultar libremente el catálogo y la información de contacto. No está permitido modificar, agregar o eliminar productos del catálogo ni utilizar el sitio de forma inadecuada.</p>
+                    </div>
+                </section>
 
-        <section>
-            <h2>8. Responsabilidad del usuario</h2>
-            <p>
-                El usuario se compromete a utilizar el sitio web
-                de manera adecuada y únicamente para consultar
-                información sobre los productos y servicios.
-            </p>
-        </section>
+                <section class="termino" id="catalogo">
+                    <span class="numero-termino">05</span>
+                    <div>
+                        <h2>Administración del catálogo</h2>
+                        <p>El propietario o administrador de la papelería es responsable de actualizar los productos, precios y disponibilidad que aparecen en el sitio. Puede haber diferencias entre la información publicada y la existencia en tienda.</p>
+                    </div>
+                </section>
 
-        <section>
-            <h2>9. Modificaciones</h2>
-            <p>
-                La papelería se reserva el derecho de actualizar
-                estos términos y condiciones cuando sea necesario.
-            </p>
-        </section>
+                <section class="termino" id="precios">
+                    <span class="numero-termino">06</span>
+                    <div>
+                        <h2>Precios</h2>
+                        <p>Los precios publicados son informativos y pueden cambiar. Confirma el precio vigente directamente con la papelería antes de realizar tu compra.</p>
+                    </div>
+                </section>
 
-        <section>
-            <h2>10. Contacto</h2>
-            <p>
-                Para cualquier duda o aclaración sobre estos
-                términos, el usuario puede comunicarse directamente
-                con la papelería.
-            </p>
-            <p>Teléfono: </p>
-            <p>Correo: </p>
-        </section>
+                <section class="termino" id="fotografias">
+                    <span class="numero-termino">07</span>
+                    <div>
+                        <h2>Fotografías de los productos</h2>
+                        <p>Las fotografías ayudan a identificar los artículos y pueden ser ilustrativas. El color, presentación o algunos detalles podrían variar respecto al producto disponible en tienda.</p>
+                    </div>
+                </section>
 
+                <section class="termino" id="responsabilidad">
+                    <span class="numero-termino">08</span>
+                    <div>
+                        <h2>Responsabilidad del usuario</h2>
+                        <p>El usuario se compromete a utilizar el sitio de manera adecuada y únicamente para consultar información sobre los productos y servicios de la papelería.</p>
+                    </div>
+                </section>
+
+                <section class="termino" id="modificaciones">
+                    <span class="numero-termino">09</span>
+                    <div>
+                        <h2>Modificaciones</h2>
+                        <p>La papelería puede actualizar estos términos cuando sea necesario. Los cambios se publicarán en esta página.</p>
+                    </div>
+                </section>
+
+                <section class="termino termino-contacto" id="contacto">
+                    <span class="numero-termino">10</span>
+                    <div>
+                        <h2>¿Tienes alguna duda?</h2>
+                        <p>Escríbenos por WhatsApp para consultar estos términos, confirmar productos o pedir más información.</p>
+                        <a class="boton-contacto" href="https://wa.me/5215611342106" target="_blank" rel="noopener noreferrer">
+                            <span aria-hidden="true">✆</span> Contactar por WhatsApp
+                        </a>
+                    </div>
+                </section>
+
+                <p class="actualizacion">Papelería H · Términos y condiciones del sitio web</p>
+            </article>
+        </div>
     </main>
 
-    <footer>
-        <p>© 2026 Papelería. Todos los derechos reservados.</p>
-        <a href="index.html">Regresar al inicio</a>
+    <footer class="pie-terminos">
+        <span class="marca-simbolo" aria-hidden="true">H</span>
+        <p><strong>Papelería H</strong> · Gracias por visitarnos.</p>
+        <a href="index.html">Volver a la tienda <span aria-hidden="true">↗</span></a>
     </footer>
-
 </body>
 </html>
