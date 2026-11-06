@@ -8,6 +8,11 @@ const mensajeResultados = document.getElementById("resultado-busqueda");
 const galeria = document.querySelector(".galeria");
 const productos = Array.from(galeria.querySelectorAll(".producto"));
 const ordenOriginal = new Map(productos.map((producto, indice) => [producto, indice]));
+const filtrosRapidos = Array.from(document.querySelectorAll(".filtro-rapido"));
+const contadorCatalogo = document.getElementById("contador-catalogo");
+const totalProductos = document.getElementById("total-productos");
+
+totalProductos.textContent = `${productos.length}+`;
 
 function normalizarTexto(texto) {
     return texto
@@ -76,6 +81,12 @@ function actualizarProductos() {
             cantidadEncontrada += 1;
         }
     });
+    contadorCatalogo.textContent = `${cantidadEncontrada} ${cantidadEncontrada === 1 ? "producto" : "productos"}`;
+    filtrosRapidos.forEach((filtro) => {
+        const activo = filtro.dataset.categoria === categoriaSeleccionada;
+        filtro.classList.toggle("activo", activo);
+        filtro.setAttribute("aria-pressed", String(activo));
+    });
 
     if (cantidadEncontrada === 0) {
         mensajeResultados.textContent = "No se encontraron productos con esos filtros.";
@@ -131,5 +142,12 @@ botonLimpiar.addEventListener("click", () => {
 selectorOrden.addEventListener("change", ordenarProductos);
 selectorCategoria.addEventListener("change", actualizarProductos);
 selectorDisponibilidad.addEventListener("change", actualizarProductos);
+filtrosRapidos.forEach((filtro) => {
+    filtro.addEventListener("click", () => {
+        selectorCategoria.value = filtro.dataset.categoria;
+        actualizarProductos();
+    });
+});
 
+contadorCatalogo.textContent = `${productos.length} productos`;
 actualizarProductos();

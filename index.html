@@ -4,25 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>papelería h</title>
+    <meta name="theme-color" content="#15376b">
+    <meta name="description" content="Descubre cuadernos, útiles escolares y materiales para crear en Papelería H.">
+    <title>Papelería HG | Todo para crear</title>
 </head>
 <body>
-    <div class="encabezado">
-    <h1>Bienvenido a Papelería H</h1>
-    <nav>
-        <ul>
-            <li><a href="Inicio">Inicio</a></li>
-            <li><a href="catalogo">Catálogo</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
-    <a href="TERMINOS_CONDICIONES.html">Términos y Condiciones</a>
-    </div>
-    <div class="busqueda">
+    <header class="encabezado" id="inicio">
+        <a class="marca" href="#inicio" aria-label="Papelería H, inicio">
+            <span class="marca-icono" aria-hidden="true">H</span>
+            <span class="marca-texto">Papelería <strong>H</strong></span>
+        </a>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <a class="enlace-terminos" href="TERMINOS_CONDICIONES.html">Términos y condiciones <span aria-hidden="true">↗</span></a>
+    </header>
+    <main>
+        <section class="portada" aria-labelledby="titulo-portada">
+            <div class="contenido-portada">
+                <span class="insignia-portada"><span aria-hidden="true">✦</span> Ideas que empiezan aquí</span>
+                <h1 id="titulo-portada">Todo para <span>imaginar, crear</span> y aprender.</h1>
+                <p>Encuentra tus útiles favoritos y dale vida a cada nueva idea. ¡Estamos para ayudarte!</p>
+                <a class="boton-portada" href="#catalogo">Explorar productos <span aria-hidden="true">↓</span></a>
+                <div class="resumen-portada">
+                    <span class="resumen-icono" aria-hidden="true">✎</span>
+                    <span><strong id="total-productos">76+</strong><small>productos para descubrir</small></span>
+                </div>
+            </div>
+            <div class="ilustracion-portada" aria-hidden="true">
+                <span class="burbuja burbuja-uno">✦</span>
+                <span class="burbuja burbuja-dos">✳</span>
+                <div class="papel-ilustrado">
+                    <span class="rayas-papel"></span>
+                    <span class="mensaje-papel">¡Hazlo<br>con color!</span>
+                    <span class="lapiz-ilustrado"></span>
+                    <span class="estrella-papel">✦</span>
+                </div>
+            </div>
+        </section>
+    <section class="busqueda" aria-label="Buscar y filtrar productos">
         <label for="buscar-productos">Buscar productos</label>
         <input type="search" id="buscar-productos" placeholder="Escribe el nombre de un producto..." autocomplete="off">
         <button type="button" id="boton-buscar">Buscar</button>
-        <button type="button" id="limpiar-busqueda">Limpiar</button>
+        <button type="button" id="limpiar-busqueda">Borrar</button>
         <label for="filtrar-categoria">Categoría</label>
         <select id="filtrar-categoria">
             <option value="todas">Todas las categorías</option>
@@ -47,12 +75,27 @@
             <option value="precio-desc">Precio (mayor a menor)</option>
         </select>
         <p id="resultado-busqueda" aria-live="polite"></p>
-    </div>
+    </section>
     <aside class="aviso-catalogo" aria-label="Aviso sobre el catálogo">
         <span class="icono-aviso" aria-hidden="true">✦</span>
         <p><strong>Catálogo en actualización.</strong> Esta página muestra solo algunos de nuestros productos; el catálogo aún no está completo y algunas funciones siguen en desarrollo. Contáctanos para confirmar disponibilidad.</p>
     </aside>
-    <main class="galeria">
+    <section class="encabezado-catalogo" id="catalogo">
+        <div>
+            <span class="sobrelinea-catalogo">UN MUNDO DE POSIBILIDADES</span>
+            <h2>Encuentra tus favoritos</h2>
+            <p>Unos cuantos esenciales para estudiar, trabajar y crear.</p>
+        </div>
+        <span class="contador-catalogo" id="contador-catalogo" aria-live="polite">76 productos</span>
+    </section>
+    <div class="filtros-rapidos" role="group" aria-label="Filtrar por categoría">
+        <button type="button" class="filtro-rapido activo" data-categoria="todas" aria-pressed="true">Ver todo</button>
+        <button type="button" class="filtro-rapido" data-categoria="papel" aria-pressed="false">Cuadernos y papel</button>
+        <button type="button" class="filtro-rapido" data-categoria="escritura" aria-pressed="false">Escritura</button>
+        <button type="button" class="filtro-rapido" data-categoria="manualidades" aria-pressed="false">Manualidades</button>
+        <button type="button" class="filtro-rapido" data-categoria="juguetes" aria-pressed="false">Juguetes</button>
+    </div>
+    <section class="galeria" aria-label="Productos de Papelería H">
         <div class="producto">
             <img src="Imagenes/4PC%20cuaderno%20espiral%20.jpg" alt="4PC cuaderno espiral">
             <h2>4PC cuaderno espiral</h2>
@@ -737,6 +780,7 @@
                 <p>Disponibilidad: Disponible</p>
             </div>
         </div>
+    </section>
     </main>
     <section class="ubicacion" id="contacto" aria-labelledby="titulo-ubicacion">
         <header class="encabezado-ubicacion">
