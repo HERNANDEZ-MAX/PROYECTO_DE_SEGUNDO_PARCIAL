@@ -1,0 +1,44 @@
+.ubicacion {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+}
+
+.mapa {
+    width: 100%;
+    height: 300px;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.contacto-whatsapp a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #128c4a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contacto-whatsapp a:hover {
+    text-decoration: underline;
+}
+
+.icono-whatsapp {
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 600px) {
+    .ubicacion {
+        padding: 1rem;
+    }
+
+    .mapa {
+        height: 240px;
+    }
+}
